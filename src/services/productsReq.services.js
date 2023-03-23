@@ -1,5 +1,5 @@
 const { productsModel } = require('../models');
-const { validateId } = require('../middlewares/validations/validation');
+const { validateId, validateName, validateNameLength } = require('../middlewares/validations/validation');
 
 const productsAll = async () => {
   const products = await productsModel.allProducts();
@@ -18,16 +18,22 @@ const findById = async (productId) => {
   return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
 };
 
-// const createdProducts = async (name) => {
-//   const newProductsId = await productsModel.insert(name);
+const createdProducts = async (name) => {
+  const error = validateName(name);
+  const errorLength = validateNameLength(name);
+
+  if (error.type) return error;
+  if (errorLength.type) return error;
+
+  const newProductsId = await productsModel.insert(name);
   
-//   const newProducts = await productsModel.findById(newProductsId);
+  const newProducts = await productsModel.findById(newProductsId);
   
-//   return { type: null, message: newProducts };
-// };
+  return { type: null, message: newProducts };
+};
 
 module.exports = {
   productsAll,
   findById,
-  // createdProducts,
+  createdProducts,
 };
