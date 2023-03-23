@@ -55,12 +55,31 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-03-23T20:53:14.615Z",
-    "modified": "2023-03-23T20:53:14.615Z",
+    "modified": "2023-03-23T21:39:51.816Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"Bruna\"\n}",
+      "raw": "{\n  \n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "8c140a56-f88c-4d14-abea-6e756d79ceba",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3001/products",
+    "url": "http://localhost:3001/products",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-03-23T20:56:54.698Z",
+    "modified": "2023-03-23T21:26:23.739Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"leooa\"\n}",
       "form": []
     },
     "tests": []
