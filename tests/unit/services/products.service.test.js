@@ -30,11 +30,6 @@ describe('Verificando produto na camada Service', async function () {
     const error = await productsServices.createdProducts('Capa da Ravena');
     
     expect(error.message).to.equal(newObjProduct);
-
-    afterEach(function () {
-      sinon.restore();
-    });
-  
   });
   afterEach(function () {
     sinon.restore();

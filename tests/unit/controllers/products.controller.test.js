@@ -56,10 +56,6 @@ describe('Testando a camada de Controller', async function (){
 
     expect(res.status).to.have.been.calledWith(201);
     expect(res.json).to.have.been.calledWith(newProduct);
-
-    afterEach(function () {
-      sinon.restore();
-    });
   });
   afterEach(function () {
     sinon.restore();
