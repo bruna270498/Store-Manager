@@ -26,9 +26,9 @@ describe('Verificando produto na camada Service', async function () {
     expect(product.message).to.deep.equal(products[0])
   });
   it('Cadastrando no Service', async function () {
-
+    sinon.stub(productsModel, 'insert').resolves(newObjProduct)
     const error = await productsServices.createdProducts('Capa da Ravena');
-    
+    console.log(error.message)
     expect(error.message).to.equal(newObjProduct);
   });
   afterEach(function () {
