@@ -13,6 +13,16 @@ const products = [
   }
 ];
 
+const newProduct = [
+  {
+    name: 'Capa da Ravena'
+  }
+];
+
+const newObjProduct = { id: 8, name: 'Capa da Ravena' };
+
 module.exports = {
   products,
+  newProduct,
+  newObjProduct
 };

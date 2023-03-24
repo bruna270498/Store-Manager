@@ -4,10 +4,10 @@ const { productsModel } = require('../../../src/models');
 const { productsServices } = require('../../../src/services');
 
 
-const { products } = require('../models/mocks/products.model.mock');
+const { products, newObjProduct } = require('../models/mocks/products.model.mock');
 
-describe('Verificando produto na camada Service', async () => {
-  it('Retorna toda lista de Produtos', async () => {
+describe('Verificando produto na camada Service', async function () {
+  it('Retorna toda lista de Produtos', async function () {
     // Arranjo
     sinon.stub(productsModel, 'allProducts').resolves(products);
     // Agir
@@ -16,7 +16,7 @@ describe('Verificando produto na camada Service', async () => {
     expect(result.type).to.be.equal(null);
     expect(result.message).to.be.equal(products);
   });
-  it('Retorna produto por id', async () => {
+  it('Retorna produto por id', async function () {
     // Arranjo
     sinon.stub(productsModel, 'findById').resolves(products[0]);
     // Agir
@@ -24,6 +24,17 @@ describe('Verificando produto na camada Service', async () => {
     // Afirmar
     expect(product.type).to.equal(null);
     expect(product.message).to.deep.equal(products[0])
+  });
+  it('Cadastrando no Service', async function () {
+
+    const error = await productsServices.createdProducts('Capa da Ravena');
+    
+    expect(error.message).to.equal(newObjProduct);
+
+    afterEach(function () {
+      sinon.restore();
+    });
+  
   });
   afterEach(function () {
     sinon.restore();
