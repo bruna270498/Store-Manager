@@ -1,6 +1,5 @@
 const { salesModel } = require('../models');
 
-
 const createSale = async (saleArray) => {
   const saleId = await salesModel.createNewSale();
   const saleNew = saleArray.map((product) => salesModel.createProductsSaleNew(saleId, product));
