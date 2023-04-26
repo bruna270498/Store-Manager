@@ -27,7 +27,7 @@ A API que eu construí é um sistema de gerenciamento de vendas em dropshipping,
  ```bash
  # clone o repositorio
  
-- git clone git@github.com:bruna270498/Project-Tryunfo.git
+- git clone git@github.com:bruna270498/Store-Manager.git
 
 # Rode os serviços node e db
 
